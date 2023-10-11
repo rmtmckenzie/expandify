@@ -9,7 +9,8 @@ void main() {
     final key = GlobalKey();
     await tester.pumpWidget(
       WidgetsApp(
-        pageRouteBuilder: <T>(settings, builder) => MaterialPageRoute<T>(builder: builder),
+        pageRouteBuilder: <T>(settings, builder) =>
+            MaterialPageRoute<T>(builder: builder),
         home: Scaffold(
           body: Expandify(
             key: key,
@@ -27,7 +28,8 @@ void main() {
       ),
     );
 
-    await expectLater(find.byKey(key), matchesGoldenFile('goldens/two_horizontal.png'));
+    await expectLater(
+        find.byKey(key), matchesGoldenFile('goldens/two_horizontal.png'));
   });
 
   testWidgets('Works horizontally with 5', (tester) async {
@@ -37,7 +39,8 @@ void main() {
     final lastKey = GlobalKey();
     await tester.pumpWidget(
       WidgetsApp(
-        pageRouteBuilder: <T>(settings, builder) => MaterialPageRoute<T>(builder: builder),
+        pageRouteBuilder: <T>(settings, builder) =>
+            MaterialPageRoute<T>(builder: builder),
         home: Scaffold(
           body: Expandify(
             key: key,
@@ -49,7 +52,8 @@ void main() {
                 Container(color: Colors.red, width: 100, height: 100),
                 Container(color: Colors.purple, width: 100, height: 100),
                 Container(color: Colors.orange, width: 200, height: 100),
-                Container(color: Colors.green, width: 100, height: 100, key: lastKey),
+                Container(
+                    color: Colors.green, width: 100, height: 100, key: lastKey),
               ],
             ),
           ),
@@ -57,12 +61,14 @@ void main() {
         color: Colors.white,
       ),
     );
-    await expectLater(find.byKey(key), matchesGoldenFile('goldens/five_horizontal.png'));
+    await expectLater(
+        find.byKey(key), matchesGoldenFile('goldens/five_horizontal.png'));
 
     await tester.ensureVisible(find.byKey(lastKey, skipOffstage: false));
     await tester.pump();
 
-    await expectLater(find.byKey(key), matchesGoldenFile('goldens/five_horizontal_scrolled.png'));
+    await expectLater(find.byKey(key),
+        matchesGoldenFile('goldens/five_horizontal_scrolled.png'));
   });
 
   testWidgets('Expands vertically with 2', (tester) async {
@@ -71,7 +77,8 @@ void main() {
     final key = GlobalKey();
     await tester.pumpWidget(
       WidgetsApp(
-        pageRouteBuilder: <T>(settings, builder) => MaterialPageRoute<T>(builder: builder),
+        pageRouteBuilder: <T>(settings, builder) =>
+            MaterialPageRoute<T>(builder: builder),
         home: Scaffold(
           body: Expandify(
             key: key,
@@ -88,7 +95,8 @@ void main() {
       ),
     );
 
-    await expectLater(find.byKey(key), matchesGoldenFile('goldens/two_vertical.png'));
+    await expectLater(
+        find.byKey(key), matchesGoldenFile('goldens/two_vertical.png'));
   });
 
   testWidgets('Works vertically with 5', (tester) async {
@@ -98,7 +106,8 @@ void main() {
     final lastKey = GlobalKey();
     await tester.pumpWidget(
       WidgetsApp(
-        pageRouteBuilder: <T>(settings, builder) => MaterialPageRoute<T>(builder: builder),
+        pageRouteBuilder: <T>(settings, builder) =>
+            MaterialPageRoute<T>(builder: builder),
         home: Scaffold(
           body: Expandify(
             key: key,
@@ -109,7 +118,8 @@ void main() {
                 Container(color: Colors.red, width: 100, height: 100),
                 Container(color: Colors.purple, width: 100, height: 100),
                 Container(color: Colors.orange, width: 100, height: 600),
-                Container(color: Colors.green, width: 100, height: 100, key: lastKey),
+                Container(
+                    color: Colors.green, width: 100, height: 100, key: lastKey),
               ],
             ),
           ),
@@ -117,11 +127,13 @@ void main() {
         color: Colors.white,
       ),
     );
-    await expectLater(find.byKey(key), matchesGoldenFile('goldens/five_vertical.png'));
+    await expectLater(
+        find.byKey(key), matchesGoldenFile('goldens/five_vertical.png'));
 
     await tester.ensureVisible(find.byKey(lastKey, skipOffstage: false));
     await tester.pump();
 
-    await expectLater(find.byKey(key), matchesGoldenFile('goldens/five_vertical_scrolled.png'));
+    await expectLater(find.byKey(key),
+        matchesGoldenFile('goldens/five_vertical_scrolled.png'));
   });
 }
