@@ -1,6 +1,6 @@
 # Expandify
 
-[![pub package][version_badge]](https://pub.dartlang.org/packages/expandify)
+[![pub package][version_badge]](https://pub.dev/packages/expandify)
 
 This package provides a very simple implementation of a widget which ensures
 a child widget can take the height or width of the screen, but still be able
