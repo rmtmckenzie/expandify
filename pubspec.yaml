@@ -1,6 +1,6 @@
 name: expandify
 description: Provides widget to help child expand to fill space or scroll
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/rmtmckenzie/expandify
 
 environment:
